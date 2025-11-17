@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدرسة غريسا الأساسية للبنين</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body { margin:0; padding:0; font-family:'Merriweather', serif; background:#e8f0fe; color:#111; display:flex; min-height:100vh;}
+.sidebar {
+  position:fixed; top:0; left:0; width:220px; height:100%; background:#ffffff; display:flex; flex-direction:column; align-items:center; padding-top:30px; box-shadow:2px 0 10px rgba(0,0,0,0.2); z-index:1000;
+}
+.sidebar img{height:60px; margin-bottom:20px;}
+.sidebar a { display:block; width:100%; text-align:center; margin:10px 0; padding:12px 0; font-weight:bold; font-size:18px; color:#0d47a1; text-decoration:none; transition:0.3s; cursor:pointer; }
+.sidebar a:hover{background:#bbdefb; color:#0d47a1; border-radius:8px;}
+.main-content { margin-left:220px; flex:1; padding:50px; }
+
+/* الأقسام */
+section{display:none; padding:60px; background:#ffffff; border-radius:20px; box-shadow:0 10px 20px rgba(0,0,0,0.1); margin-bottom:50px;}
+section.active{display:block;}
+section h1{font-size:2.8rem; margin-bottom:30px; text-align:center; color:#0d47a1;}
+section p{font-size:1.2rem; line-height:1.8; text-align:center; color:#111;}
+.hero h1{font-size:3rem; margin-bottom:20px;}
+.hero p{font-size:1.2rem; margin-bottom:30px;}
+
+/* الأزرار */
+.btn, .whatsapp-btn { display:inline-block; padding:12px 30px; border-radius:10px; font-weight:bold; font-size:1rem; text-decoration:none; transition:0.3s; border:none; cursor:pointer;}
+.btn { background:#0d47a1; color:#fff; margin-top:15px; }
+.btn:hover{background:#1565c0;}
+.whatsapp-btn{background:#43a047; color:#fff;}
+.whatsapp-btn:hover{background:#2e7d32;}
+
+/* Grid للمعلمين والإعلانات */
+.grid-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; margin-top:30px; }
+.card { background:#e3f2fd; padding:25px; border-radius:15px; text-align:center; box-shadow:0 5px 20px rgba(0,0,0,0.1); transform:translateY(40px); opacity:0; transition:all 0.6s ease; }
+.card.visible{transform:translateY(0); opacity:1;}
+.card h3{font-size:1.3rem; margin-bottom:8px; color:#0d47a1;}
+.card p{color:#111; font-size:1.1rem;}
+
+/* Responsive */
+@media(max-width:768px){
+  body{flex-direction:column;}
+  .sidebar{position:relative; width:100%; flex-direction:row; justify-content:center; height:auto; padding:10px 0; box-shadow:none;}
+  .sidebar a{margin:0 10px;}
+  .main-content{margin-left:0; padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+<img src="logo.png" alt="لوغو المدرسة">
+<a onclick="showSection('home')">الرئيسية</a>
+<a onclick="showSection('about')">عن المدرسة</a>
+<a onclick="showSection('teachers')">المعلمون</a>
+<a onclick="showSection('announcements')">الإعلانات</a>
+<a onclick="showSection('contact')">اتصل بنا</a>
+<a onclick="showSection('suggestions')">اقتراحات</a>
+</div>
+
+<div class="main-content">
+
+<section id="home" class="active hero">
+<h1>مدرسة غريسا الأساسية للبنين</h1>
+<p>نقدم بيئة تعليمية راقية ومتميزة لتطوير مهارات الطلبة الأكاديمية والحياتية بطريقة حديثة ومهنية.</p>
+<a class="btn" onclick="showSection('about')">تعرف على المدرسة</a>
+</section>
+
+<section id="about">
+<h1>عن المدرسة</h1>
+<p>مدرسة غريسا الأساسية للبنين مؤسسة تربوية تهدف إلى تقديم تعليم متميز يرتقي بقدرات الطلبة ويعزز مهاراتهم الحياتية والأكاديمية في بيئة تعليمية آمنة ومحفزة.</p>
+<p>نلتزم بأفضل المناهج والتطوير المستمر للمعلمين لضمان جودة التعليم ونجاح الطلبة في مختلف المجالات.</p>
+</section>
+
+<section id="teachers">
+<h1>المعلمون</h1>
+<div class="grid-container">
+  <div class="card"><h3>أ. رائد الزيود</h3><p>مدير المدرسة</p></div>
+  <div class="card"><h3>أ. يوسف الزيود</h3><p>علوم</p></div>
+  <div class="card"><h3>أ. ماجد الزيود</h3><p>رياضيات</p></div>
+  <div class="card"><h3>أ. إبراهيم الدهيدي</h3><p>اجتماعيات</p></div>
+  <div class="card"><h3>أ. سامي الزيود</h3><p>اللغة الإنجليزية</p></div>
+  <div class="card"><h3>أ. رياض المشاقبة</h3><p>لغة عربية</p></div>
+  <div class="card"><h3>أ. مصطفى الزيود</h3><p>لغة عربية</p></div>
+  <div class="card"><h3>أ. طارق الزيود</h3><p>تربية إسلامية</p></div>
+  <div class="card"><h3>أ. عاطف المشاقبة</h3><p>تربية مهنية</p></div>
+</div>
+</section>
+
+<section id="announcements">
+<h1>الإعلانات</h1>
+<div class="grid-container">
+  <!-- هنا يمكنك كتابة إعلاناتك مباشرة -->
+  <div class="card visible"><p>الإعلان الأول هنا</p></div>
+  <div class="card visible"><p>الإعلان الثاني هنا</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h1>اتصل بنا</h1>
+<div style="text-align:center; margin-top:30px;">
+  <a class="whatsapp-btn" href="https://wa.me/962776785690" target="_blank">تواصل عبر واتساب</a>
+  <a class="btn" href="https://www.facebook.com/share/1EpKoiXzZU/" target="_blank" style="background:#3b5998; color:#fff;">زيارة صفحتنا على فيسبوك</a>
+  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdW5oSye8n5aj_QMcJvRQMQleXL3ZijDTldyNrwOrDLvKMM4Q/viewform?usp=publish-editor" target="_blank" style="background:#ff8c00; color:#fff;">تواصل الآن</a>
+</div>
+</section>
+
+<section id="suggestions">
+<h1>اقتراحات الطلاب</h1>
+<p>يمكنك إرسال اقتراحك أو ملاحظتك عبر النموذج أدناه:</p>
+<div style="text-align:center; margin-top:30px;">
+  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdW5oSye8n5aj_QMcJvRQMQleXL3ZijDTldyNrwOrDLvKMM4Q/viewform?usp=publish-editor" target="_blank" style="background:#ff8c00; color:#fff;">إرسال اقتراحك الآن</a>
+</div>
+</section>
+
+</div>
+
+<script>
+function showSection(id) {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+const cards = document.querySelectorAll('.card');
+function revealCards() {
+  const triggerBottom = window.innerHeight*0.85;
+  cards.forEach(card=>{
+    const cardTop = card.getBoundingClientRect().top;
+    if(cardTop < triggerBottom) card.classList.add('visible');
+  });
+}
+window.addEventListener('scroll', revealCards);
+window.addEventListener('load', revealCards);
+</script>
+
+</body>
+</html>
